@@ -12,7 +12,8 @@ on arch based distros run:
 
     sudo pacman -S raylib
 
-then chose a folder to store this small game and open that folder in a terminal emulator (like KDE Konsole or Kitty)
+then chose a folder to store this small game and open that folder in a terminal emulator 
+(like KDE Konsole or Kitty)
 
 then clone the repo:
 
