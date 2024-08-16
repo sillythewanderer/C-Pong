@@ -12,17 +12,24 @@ on arch based distros run:
 
     sudo pacman -S raylib
 
-then make a folder:
-
-    mkdir CPong
-
-then enter your folder:
-    
-    cd CPong
+then chose a folder to store this small game and open that folder in a terminal emulator (like KDE Konsole or Kitty)
 
 then clone the repo:
 
     git clone https://github.com/sillythewanderer/C-Pong
 
+enter the src folder
 
-then lastly run the binary with ./Pong or in some GUI
+from the src folder run:
+
+    make
+
+this command makes a linux executable file called "Pong"
+
+then lastly run the binary with:
+
+    ./Pong
+
+you can also run it in a gui
+
+I might make precompiled binaries eventually
