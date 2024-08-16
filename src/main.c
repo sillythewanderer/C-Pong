@@ -12,11 +12,6 @@ int main() {
   // the size of the "ball" (radius)
   float ball_size = (float)screen_size / 43; 
 
-  // screen edges (for colision handling)
-
-  float screen_edge_left = ball_size;
-  float screen_edge_right = GetScreenWidth() - ball_size;
-
   // the center of the window
   Vector2 screen_center = {((float)screen_width / 2), ((float)screen_height / 2)};
   
@@ -25,6 +20,8 @@ int main() {
 
   // ball speed
   Vector2 ball_speed = {200, 160};
+
+  Rectangle left_paddle = {100, 100, 100, 100};
 
   // desired fps
   SetTargetFPS(60);
@@ -46,6 +43,7 @@ int main() {
     BeginDrawing();
       ClearBackground(BLACK);
       DrawCircleV(ball_position, ball_size, WHITE);
+      DrawRectangleRec(left_paddle, WHITE);
     EndDrawing();
   }
 
