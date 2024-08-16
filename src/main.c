@@ -21,7 +21,8 @@ int main() {
   // ball speed
   Vector2 ball_speed = {200, 160};
 
-  Rectangle left_paddle = {100, 100, 100, 100};
+  // a variable of type Rectangle used for left_paddle
+  Rectangle left_paddle = {25, 200, 25, 100};
 
   // desired fps
   SetTargetFPS(60);
@@ -34,6 +35,10 @@ int main() {
 
     ball_position.x += ball_speed.x * delta_time;
     ball_position.y += ball_speed.y * delta_time;
+
+    // movement for left paddle
+    if (IsKeyDown(KEY_W)) left_paddle.y -= 200 * delta_time;
+    if (IsKeyDown(KEY_S)) left_paddle.y += 200 * delta_time;
 
     // detecting when the ball is at the edge of the window
     if ((ball_position.x >= (GetScreenWidth() - ball_size)) || (ball_position.x <= ball_size)) ball_speed.x *= -1.0f;
