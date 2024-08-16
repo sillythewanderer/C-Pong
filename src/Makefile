@@ -1,5 +1,5 @@
 
 main:main.c
-	gcc main.c -o ball -lraylib
+	gcc main.c -o Pong -lraylib
 clear:rm ball
 
