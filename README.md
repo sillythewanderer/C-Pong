@@ -18,9 +18,7 @@ If lazy run:
 
 If not lazy:
 
-
-
-then chose a folder to store this small game and open that folder in a terminal emulator 
+chose a folder to store this small game and open that folder in a terminal emulator 
 (like KDE Konsole or Kitty)
 
 then clone the repo:
