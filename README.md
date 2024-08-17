@@ -1,4 +1,4 @@
-Pong
+# Pong
 
 This github repo contains my recreation of the game "Pong" writen in C using raylib
 
