@@ -7,7 +7,7 @@ int main() {
   const int screen_height = screen_size;
 
   // raylib window initialization
-  InitWindow(screen_width, screen_height, "ball for pong");
+  InitWindow(screen_width, screen_height, "Pong");
 
   // the size of the "ball" (radius)
   float ball_size = (float)screen_size / 43; 
@@ -41,7 +41,7 @@ int main() {
     if (IsKeyDown(KEY_S)) left_paddle.y += 300 * delta_time;
 
     if (left_paddle.y <= -1) left_paddle.y = 0;
-    if (left_paddle.y >= (GetScreenHeight() + 1)) left_paddle.y = (GetScreenHeight() - left_paddle.height);
+    if (left_paddle.y >= (GetScreenHeight() - left_paddle.height)) left_paddle.y = GetScreenHeight() - left_paddle.height + 1;
 
     // detecting when the ball is at the edge of the window
     if ((ball_position.x >= (GetScreenWidth() - ball_size)) || (ball_position.x <= ball_size)) ball_speed.x *= -1.0f;
