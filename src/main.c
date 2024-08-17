@@ -37,8 +37,11 @@ int main() {
     ball_position.y += ball_speed.y * delta_time;
 
     // movement for left paddle
-    if (IsKeyDown(KEY_W)) left_paddle.y -= 200 * delta_time;
-    if (IsKeyDown(KEY_S)) left_paddle.y += 200 * delta_time;
+    if (IsKeyDown(KEY_W)) left_paddle.y -= 300 * delta_time;
+    if (IsKeyDown(KEY_S)) left_paddle.y += 300 * delta_time;
+
+    if (left_paddle.y <= -1) left_paddle.y = 0;
+    if (left_paddle.y >= (GetScreenHeight() + 1)) left_paddle.y = (GetScreenHeight() - left_paddle.height);
 
     // detecting when the ball is at the edge of the window
     if ((ball_position.x >= (GetScreenWidth() - ball_size)) || (ball_position.x <= ball_size)) ball_speed.x *= -1.0f;
