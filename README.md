@@ -16,6 +16,10 @@ If lazy run:
 
     git clone https://github.com/sillythewanderer/C-Pong; cd C-Pong/src; make; ./Pong
 
+If not lazy:
+
+
+
 then chose a folder to store this small game and open that folder in a terminal emulator 
 (like KDE Konsole or Kitty)
 
