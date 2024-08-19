@@ -49,12 +49,13 @@ int main() {
     if ((ball_position.x >= (GetScreenWidth() - ball_size)) || (ball_position.x <= ball_size)) ball_speed.x *= -1.0f;
     if ((ball_position.y >= (GetScreenHeight() - ball_size)) || (ball_position.y <= ball_size)) ball_speed.y *= -1.0f;
 
-    CheckCollisionCircleRec(ball_position, ball_size, left_paddle);
-
+    if (CheckCollisionCircleRec(ball_position, ball_size, left_paddle) == true) {
+      ball_speed.x *= -1.0f;
+    }
     // drawing functions
     BeginDrawing();
       ClearBackground(BLACK);
-      if (CheckCollisionCircleRec(ball_position, ball_size, left_paddle) == true) DrawText("collision detected", 200, 200, 30, RED);
+      DrawText("w and s for controls", 200, 200, 30, RED);
       DrawCircleV(ball_position, ball_size, WHITE);
       DrawRectangleRec(left_paddle, WHITE);
     EndDrawing();
