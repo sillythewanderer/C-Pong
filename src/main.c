@@ -40,6 +40,8 @@ int main() {
     if (IsKeyDown(KEY_W)) left_paddle.y -= 300 * delta_time;
     if (IsKeyDown(KEY_S)) left_paddle.y += 300 * delta_time;
 
+    // detecting when the paddle hits the edge of the screen
+
     if (left_paddle.y <= -1) left_paddle.y = 0;
     if (left_paddle.y >= (GetScreenHeight() - left_paddle.height)) left_paddle.y = GetScreenHeight() - left_paddle.height + 1;
 
@@ -47,9 +49,12 @@ int main() {
     if ((ball_position.x >= (GetScreenWidth() - ball_size)) || (ball_position.x <= ball_size)) ball_speed.x *= -1.0f;
     if ((ball_position.y >= (GetScreenHeight() - ball_size)) || (ball_position.y <= ball_size)) ball_speed.y *= -1.0f;
 
+    CheckCollisionCircleRec(ball_position, ball_size, left_paddle);
+
     // drawing functions
     BeginDrawing();
       ClearBackground(BLACK);
+      if (CheckCollisionCircleRec(ball_position, ball_size, left_paddle) == true) DrawText("collision detected", 200, 200, 30, RED);
       DrawCircleV(ball_position, ball_size, WHITE);
       DrawRectangleRec(left_paddle, WHITE);
     EndDrawing();
